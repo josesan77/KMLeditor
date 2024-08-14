@@ -57,7 +57,7 @@ from pygeoif import Point, LineString
 
 Modified path saved to Google Maps compatible KML format:
 
-'''xml
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
@@ -68,7 +68,7 @@ Modified path saved to Google Maps compatible KML format:
   </Placemark>  
 </Document>  
 </kml>
-'''
+```
 
 ## Possible developments
 - removing points would be a key point and easy-to-make option,

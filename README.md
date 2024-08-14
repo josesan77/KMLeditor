@@ -31,12 +31,16 @@ Both kml files can be imported in the Google Own Map services, when a new map is
 - info folder contains:
 
  **a) before_modification.png** and **original_path_Gmap.png**, which show the software window with the registered path points and the same path on the map, respectively,
- ![KML editor showing the path before modification](info/before_modification.png)
- ![Google Map tracked path before modification](info/original_path_Gmap.png)
- 
- **b) modified_points.png** highlighted in yellow those locations which have been modified (by Drag&Drop) and **modification_groups.png** showing the points that are moved from their original location,
+![Google Map tracked path before modification](info/original_path_Gmap.png)
+![KML editor showing the path before modification](info/before_modification.png)
 
- **c) after_modification.png** and **modified_path_Gmap.png**, which show the software window with the original path points besides the modified points and the same modified path on the map, respectively.
+ **b) modified_points.png** highlighted in yellow those locations which have been modified (by Drag&Drop) and **modification_groups.png** showing the points that are moved from their original location,
+![Points to be modified](info/modified_points.png)
+![The modified points highlighted](info/modification_groups.png)
+
+ **c) after_modification.png** and **modified_path_Gmap.png**, which show the software window with the original path points besides the modified points and the same modified path on the (Google My Maps) map, respectively.
+![Modified path in KML editor](info/after_modification.png)
+![Modified path imported in Google My Maps](info/modified_path_Gmap.png)
 
 ##Notes: 
     Google map path contains multiple points as parts of a **Linestring** which defines a set of geo-coordinates which should be connected (on the map by a line) in the order of appearence.
@@ -50,6 +54,21 @@ pip install fastkml tkinter shapely
 
 Check existance of pygeoif module in Python IDLE (or IDE) by an import test:
 from pygeoif import Point, LineString
+
+Modified path saved to Google Maps compatible KML format:
+
+'''xml
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <Placemark> 
+    <LineString>  
+      <coordinates>17.2012735,47.8064775,0 </coordinates>
+    </LineString>  
+  </Placemark>  
+</Document>  
+</kml>
+'''
 
 ## Possible developments
 - removing points would be a key point and easy-to-make option,

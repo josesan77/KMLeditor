@@ -30,14 +30,17 @@ Both kml files can be imported in the Google Own Map services, when a new map is
  
 - info folder contains:
 
- **a) before_modification.png** and **original_path_Gmap.png**, which show the software window with the registered path points and the same path on the map, respectively
+ **a) before_modification.png** and **original_path_Gmap.png**, which show the software window with the registered path points and the same path on the map, respectively,
+ ![KML editor showing the path before modification](info/before_modification.png)
+ ![Google Map tracked path before modification](info/original_path_Gmap.png)
  
- **b) modified_points.png** highlighted in yellow those locations which have been modified (by Drag&Drop)
+ **b) modified_points.png** highlighted in yellow those locations which have been modified (by Drag&Drop) and **modification_groups.png** showing the points that are moved from their original location,
 
  **c) after_modification.png** and **modified_path_Gmap.png**, which show the software window with the original path points besides the modified points and the same modified path on the map, respectively.
 
 ##Notes: 
-    Google map path contains multiple points as parts of a **Linestring** which defines a set of geo-coordinates which should be connected (on the map by a line) in the order of appearence. https://developers.google.com/maps/documentation/javascript/examples/polyline-simple
+    Google map path contains multiple points as parts of a **Linestring** which defines a set of geo-coordinates which should be connected (on the map by a line) in the order of appearence.
+	[Google PolyLines, examples](https://developers.google.com/maps/documentation/javascript/examples/polyline-simple)
 	
     Google map is not loaded to serve as background as it requires Google API key. Not part of this basic software!
 
@@ -47,6 +50,15 @@ pip install fastkml tkinter shapely
 
 Check existance of pygeoif module in Python IDLE (or IDE) by an import test:
 from pygeoif import Point, LineString
+
+## Possible developments
+- removing points would be a key point and easy-to-make option,
+
+- in contrast adding track points is a bit more tricky because the points should be added at the right place in the order of points (LineString) to avoid dizzy lines,
+
+- highlighting a point by clicking is an easy request but I consider it does not add much to the track modification functionality, rather it serves fanciness only,
+
+- adding real maps (with continuous updates) in the background would be the best development as a positive outcome but has a high coding time demand, but either the software should use a common Google API key that due to economical reasons Google does not offer, or each user should use their own API key which I consider to be an overcomplication of the task and functionality.
 
 **@author: Data4every1**
 Created on Mon Aug 10 14:12:27 2024
